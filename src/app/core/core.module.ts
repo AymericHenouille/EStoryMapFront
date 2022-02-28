@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './guards/auth.guard';
+import { ThemesService } from './services/themes.service';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavBarComponent
+  ],
   imports: [
-    BrowserModule
+    BrowserAnimationsModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    ThemesService,
+    AuthService
   ]
 })
 export class CoreModule { }

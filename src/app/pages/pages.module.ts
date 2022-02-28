@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'profil', loadChildren: () => import('./profil/profil.module').then(m => m.ProfilModule), canActivate: [AuthGuard] },
   { path: 'project', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule), canActivate: [AuthGuard] },
   { path: 'workspaces', loadChildren: () => import('./workspace/workspace.module').then(m => m.WorkspaceModule), canActivate: [AuthGuard] },
-  { path: '', redirectTo: 'workspaces' }
+  { path: '', redirectTo: 'workspaces', pathMatch: 'full' }
 ];
 
 @NgModule({
