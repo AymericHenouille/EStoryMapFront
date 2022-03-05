@@ -8,6 +8,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRippleModule } from '@angular/material/core';
 
 const MODULES: Type<any>[] = [
   MatToolbarModule,
@@ -18,7 +21,10 @@ const MODULES: Type<any>[] = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatRippleModule
 ];
 
 @NgModule({

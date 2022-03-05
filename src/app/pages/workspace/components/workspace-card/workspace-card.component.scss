@@ -1,0 +1,7 @@
+$size: 200px;
+
+.card {
+  max-width: $size;
+  max-height: $size / 2;
+  cursor: pointer;
+}

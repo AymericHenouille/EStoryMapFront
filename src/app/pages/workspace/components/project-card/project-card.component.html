@@ -1,0 +1,9 @@
+<mat-card [ngStyle]="{ 'border-top': 'solid 1em ' + project.color }">
+  <mat-card-title class="title">
+    <span>{{ project.emoticon }} {{ project.label }}</span>
+  </mat-card-title>
+  <img [src]="image" alt="project cover">
+  <mat-card-actions>
+    <button mat-button>Ouvrir</button>
+  </mat-card-actions>
+</mat-card>

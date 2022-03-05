@@ -1,0 +1,7 @@
+<mat-card matRipple class="card" [ngStyle]="{
+  'border-top': 'solid 1em ' + workspace.color
+}" [routerLink]="['/workspaces', workspace.id]" >
+  <mat-card-title >
+    {{ workspace.emoticon }} {{ workspace.label }}
+  </mat-card-title>
+</mat-card>

@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <span>E-Storymap</span>
+  <span class="link" [routerLink]="['/workspaces']" routerLinkActive="selected">Mes Projects</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="settings" aria-label="Setting button">
+    <mat-icon aria-hidden="false" aria-label="Settings icon">settings</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #settings="matMenu">
+  <button mat-menu-item [routerLink]="['/profil']">
+    <mat-icon>account_circle</mat-icon>
+    <span>Modifier profile</span>
+  </button>
+  <span mat-menu-item>
+    <mat-icon>{{ icon }}</mat-icon>
+    <mat-slide-toggle
+      (click)="$event.stopPropagation()"
+      [(ngModel)]="isDark"
+      (change)="toggleTheme($event)">Dark Theme</mat-slide-toggle>
+  </span>
+  <button color="warn" mat-menu-item>
+    <mat-icon>logout</mat-icon>
+    <span>Deconnecter</span>
+  </button>
+</mat-menu>
