@@ -8,8 +8,9 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public get<T>(url: string): Observable<T> {
-    return this.httpClient.get<T>(`${environment.serverLocation}/api/${url}`);
+  public get<T>(url: string, httpHeaderConfig = {}): Observable<T> {
+    const headers: HttpHeaders = new HttpHeaders(httpHeaderConfig);
+    return this.httpClient.get<T>(`${environment.serverLocation}/api/${url}`, {headers});
   }
 
   public post<T>(url: string, body: unknown): Observable<T> {

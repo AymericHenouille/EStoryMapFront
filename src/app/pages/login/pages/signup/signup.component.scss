@@ -1,0 +1,3 @@
+@use '../signin/signin.component' as form;
+
+@include form.form();

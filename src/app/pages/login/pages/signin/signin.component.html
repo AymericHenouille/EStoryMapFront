@@ -1,1 +1,19 @@
-<p>signin works!</p>
+<h2 class="center">Se connecter</h2>
+<form autocomplete="off" class="form" [formGroup]="signinForm" (ngSubmit)="submit()">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput type="password" formControlName="password">
+  </mat-form-field>
+  <div class="button">
+    <button mat-button [routerLink]="['/login', 'signup']" >
+      Se connecter
+    </button>
+    <button color="primary" type="submit" mat-raised-button>
+      S'inscrire
+    </button>
+  </div>
+</form>
