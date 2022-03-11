@@ -9,11 +9,11 @@
     <input matInput type="password" formControlName="password">
   </mat-form-field>
   <div class="button">
-    <button mat-button [routerLink]="['/login', 'signup']" >
-      Se connecter
-    </button>
-    <button color="primary" type="submit" mat-raised-button>
+    <button mat-button type="button" [routerLink]="['/login', 'signup']" [disabled]="isLoading">
       S'inscrire
+    </button>
+    <button color="primary" type="submit" mat-raised-button [disabled]="signinForm.invalid || isLoading">
+      Se connecter
     </button>
   </div>
 </form>

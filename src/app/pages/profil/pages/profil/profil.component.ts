@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Subscription } from 'rxjs';
+import { filter, Observable, Subscription } from 'rxjs';
 import { User } from 'src/app/core/models/user.model';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -20,7 +20,9 @@ export class ProfilComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
 
   public ngOnInit(): void {
-    this._user = this.authService.user$.subscribe(user => {
+    this._user = (this.authService.user$.pipe(
+      filter(user => !!user)
+    ) as Observable<User>).subscribe(user => {
       this.user = user;
       this.editProfilForm = new FormGroup({
         name: new FormControl(this.user.name),
