@@ -10,7 +10,6 @@ export class AuthGuard implements CanActivate {
 
   public canActivate(): Observable<boolean> {
     return this.authService.user$.pipe(
-      first(),
       map(user => !!user),
       tap(isLog => isLog || this.router.navigate(['/login']))
     );

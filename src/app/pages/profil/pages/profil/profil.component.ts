@@ -43,7 +43,7 @@ export class ProfilComponent implements OnInit, OnDestroy {
     if (this.editProfilForm.valid) {
       const user: User = this.editProfilForm.value;
       const duration: number = 2500;
-      this.authService.updateUserState(user)
+      this.authService.updateUser(user)
         .then(() => {
           this.snackBar.open('profile mis a jour', 'ok', { duration });
           this.toggleEdit();

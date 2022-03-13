@@ -3,10 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './guards/auth.guard';
 import { ThemesService } from './services/themes.service';
 import { AuthService } from './services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from './services/http.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WorkspaceService } from './services/workspaces.service';
 import { ProjectService } from './services/project.service';
+import { UserLoginInterceptor } from './interceptor/userlogin.interceptor';
 
 @NgModule({
   imports: [
@@ -17,9 +17,9 @@ import { ProjectService } from './services/project.service';
     AuthGuard,
     ThemesService,
     AuthService,
-    HttpService,
     WorkspaceService,
-    ProjectService
+    ProjectService,
+    { provide: HTTP_INTERCEPTORS, useClass: UserLoginInterceptor, multi: true },
   ]
 })
 export class CoreModule { }

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="user">
   <span>E-Storymap</span>
   <span class="link" [routerLink]="['/workspaces']" routerLinkActive="selected">Mes Projects</span>
   <span class="spacer"></span>
@@ -19,7 +19,7 @@
       [(ngModel)]="isDark"
       (change)="toggleTheme($event)">Dark Theme</mat-slide-toggle>
   </span>
-  <button color="warn" mat-menu-item>
+  <button color="warn" mat-menu-item (click)="logout()">
     <mat-icon>logout</mat-icon>
     <span>Deconnecter</span>
   </button>
