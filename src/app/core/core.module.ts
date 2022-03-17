@@ -7,6 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WorkspaceService } from './services/workspaces.service';
 import { ProjectService } from './services/project.service';
 import { UserLoginInterceptor } from './interceptor/userlogin.interceptor';
+import { UploadFileService } from './services/upload-file.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { UserLoginInterceptor } from './interceptor/userlogin.interceptor';
     AuthService,
     WorkspaceService,
     ProjectService,
+    UploadFileService,
     { provide: HTTP_INTERCEPTORS, useClass: UserLoginInterceptor, multi: true },
   ]
 })

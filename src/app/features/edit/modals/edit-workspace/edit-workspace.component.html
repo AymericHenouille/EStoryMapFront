@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>{{ action }} votre workspace</h1>
+<mat-dialog-content class="mat-typography">
+    <mat-form-field class="full">
+      <input matInput type="text" [(ngModel)]="label" placeholder="Nom de votre workspace">
+    </mat-form-field>
+    <div class="buttons full">
+      <button *ngIf="!emoji" mat-icon-button [matMenuTriggerFor]="emojiPicker" #menu #menuContacts="matMenuTrigger">
+        <mat-icon >emoji_emotions</mat-icon>
+      </button>
+      <button class="emoji" *ngIf="emoji" mat-button [matMenuTriggerFor]="emojiPicker" #menu>
+        {{ emoji }}
+      </button>
+
+      <button [(colorPicker)]="color" cpPosition="top" mat-raised-button [ngStyle]="{
+        'background-color': color,
+        'color': '#fff'
+      }">
+        <mat-icon>color_lens</mat-icon>
+      </button>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>
+    Anuller
+  </button>
+  <button color="primary" mat-raised-button (click)="onSubmit()" [disabled]="!label">
+    {{ action }}
+  </button>
+</mat-dialog-actions>
+
+<mat-menu #emojiPicker="matMenu" class="emoji-picker">
+  <emoji-mart
+    (click)="$event.stopPropagation()"
+    title="Pick your emoji…"
+    emoji="point_up"
+    (emojiClick)="selectEmoji($event)"
+  ></emoji-mart>
+</mat-menu>

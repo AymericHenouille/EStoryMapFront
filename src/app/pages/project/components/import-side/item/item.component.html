@@ -1,0 +1,13 @@
+<div class="item">
+  <div class="first-line">
+    <span class="type">{{ type | uppercase }}</span>
+    <button (click)="fileUpload.click()" >
+      import
+    </button>
+  </div>
+  <div class="file-name full-witdh text-center">{{ fileFieldName }}</div>
+</div>
+
+<input type="file" class="file-input"
+    [accept]="accept"
+    (change)="uploadFile($event)" #fileUpload>

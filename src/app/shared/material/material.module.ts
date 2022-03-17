@@ -12,6 +12,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRippleModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const MODULES: Type<any>[] = [
   MatToolbarModule,
@@ -26,7 +29,10 @@ const MODULES: Type<any>[] = [
   MatDividerModule,
   MatExpansionModule,
   MatRippleModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatDialogModule,
+  MatProgressSpinnerModule,
+  MatGridListModule
 ];
 
 @NgModule({

@@ -14,13 +14,14 @@ export class UserLoginInterceptor implements HttpInterceptor {
     return this.authService.loginToken$.pipe(
       first(),
       map(token => req.clone({
-        headers: req.headers
-          .set('authorization', token)
-          .set('Content-Type', 'application/json'),
+        headers: req.url === 'registration' ? req.headers : req.headers
+          .set('authorization', token),
         url: `${environment.serverLocation}/api/${req.url}`
       })),
       switchMap((req) => next.handle(req))
     );
   }
+
+
 
 }

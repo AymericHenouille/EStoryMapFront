@@ -1,0 +1,62 @@
+.full {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.emoji-picker {
+  width: 355px;
+  max-width: unset !important;
+}
+
+
+.emoji {
+  font-size: 1.5em;
+}
+
+.file-input {
+  display: none;
+}
+
+.drop-box {
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+  border: 2px dashed;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.image-container {
+
+  &:hover {
+    & .cover {
+      opacity: 0.3;
+    }
+
+    & button {
+      opacity: 1;
+    }
+  }
+
+  .cover {
+    transition: .5s ease;
+    width: 300px;
+    height: auto;
+  }
+
+  .hover-image {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+}

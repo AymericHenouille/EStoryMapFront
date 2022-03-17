@@ -8,6 +8,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { WorkspaceHeaderComponent } from './components/workspace-header/workspace-header.component';
 import { WorkspacePageComponent } from './pages/workspace-page/workspace-page.component';
 import { WorkspaceViewComponent } from './pages/workspace-view/workspace-view.component';
+import { SharedComponent } from './modals/shared/shared.component';
+import { EditModule } from 'src/app/features/edit/edit.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { WorkspaceViewComponent } from './pages/workspace-view/workspace-view.co
     ProjectCardComponent,
     WorkspaceHeaderComponent,
     WorkspacePageComponent,
-    WorkspaceViewComponent
+    WorkspaceViewComponent,
+    SharedComponent,
   ],
   imports: [
     CommonModule,
     WorkspaceRoutingModule,
-    SharedModule
+    SharedModule,
+    EditModule,
+    FormsModule
   ]
 })
 export class WorkspaceModule { }

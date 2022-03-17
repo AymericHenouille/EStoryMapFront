@@ -1,7 +1,9 @@
 <mat-toolbar color="primary" *ngIf="user">
-  <span>E-Storymap</span>
-  <span class="link" [routerLink]="['/workspaces']" routerLinkActive="selected">Mes Projects</span>
+  <span>Bonjour {{ user.name }} !</span>
   <span class="spacer"></span>
+  <button mat-icon-button [routerLink]="['/workspaces']">
+    <mat-icon>home</mat-icon>
+  </button>
   <button mat-icon-button [matMenuTriggerFor]="settings" aria-label="Setting button">
     <mat-icon aria-hidden="false" aria-label="Settings icon">settings</mat-icon>
   </button>

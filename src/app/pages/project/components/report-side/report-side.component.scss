@@ -1,0 +1,26 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  ul {
+    font-family: 'Ubuntu', sans-serif;
+    font-size : 17px;
+    color: #e74c3c;
+  }
+
+  .clean {
+    color: #2ecc71;
+  }
+
+}
