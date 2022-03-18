@@ -14,9 +14,9 @@ jobs:
           node-version: '14'
       - run: npm install && npm run build --base-href='EStoryMapFront'
       - run: |
-          git config --local user.email "test@chillycheesy.com"
+          git config --local user.email "deployBot@chillycheesy.com"
           git config --local user.name "deployBot"
-          git add dist/*
+          git add -f dist/*
           git commit -m "auto deploy front"
       - name: push on gh-pages
         uses: ad-m/github-push-action@master
