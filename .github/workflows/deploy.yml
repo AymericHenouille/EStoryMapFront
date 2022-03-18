@@ -16,11 +16,4 @@ jobs:
       - run: |
           git config --local user.email "deployBot@chillycheesy.com"
           git config --local user.name "deployBot"
-          git add -f dist/*
-          git commit -m "auto deploy front"
-      - name: push on gh-pages
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          branch: gh-pages
-          force: true
+          git subtree split -P dist/estory-map-front/ -b gh-pages
