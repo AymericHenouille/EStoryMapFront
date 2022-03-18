@@ -7,6 +7,7 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
 import { AddWorkspaceComponent } from './components/add-workspace/add-workspace.component';
 import { EditProjectComponent } from './modals/edit-project/edit-project.component';
 import { EditWorkspaceComponent } from './modals/edit-workspace/edit-workspace.component';
+import { ComfirmComponent } from './modals/comfirm/comfirm.component';
 
 const COMPONENTS: Type<any>[] = [
   AddProjectComponent,
@@ -16,7 +17,7 @@ const COMPONENTS: Type<any>[] = [
 ];
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [COMPONENTS, ComfirmComponent],
   imports: [
     SharedModule,
     FormsModule,

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverLocation: 'http://bleu.e-storymap.geoffrey-vaniscotte.fr'
+  serverLocation: 'http://146.59.226.53:8082'
 };

@@ -1,5 +1,6 @@
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, lastValueFrom, merge, Observable, of } from 'rxjs';
 import { tap, switchMap, map } from 'rxjs/operators';
 import { AnalyseResponse, Project, Workspace } from '../models/project.model';
@@ -16,7 +17,8 @@ export class ProjectService {
   constructor(
     private httpClient: HttpClient,
     private workspaceService: WorkspaceService,
-    private uploadFileService: UploadFileService
+    private uploadFileService: UploadFileService,
+    private router: Router
   ) { }
 
   public uploadFile(project: Project, type: FileType, file: File): Observable<HttpEvent<Object>> {
@@ -50,6 +52,14 @@ export class ProjectService {
       switchMap((project) => coverFile ? lastValueFrom(this.setProjectCover(project, coverFile)) : of(project)),
       tap(() => this.update$.next()),
     ));
+  }
+
+  public deleteProject(project: Project): Promise<Project> {
+    return lastValueFrom(this.getProjectWorkspace(project).pipe(
+      switchMap((workspace) => this.httpClient.delete<Project>(`projects/${project.id}`).pipe(
+        tap(() => this.update$.next()),
+        tap(() => this.router.navigate(['/workspaces', workspace.id]))
+    )))).then(() => project);
   }
 
   public getProjectWorkspace(project: Project): Observable<Workspace> {

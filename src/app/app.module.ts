@@ -6,9 +6,7 @@ import { AppContainerModule } from './features/app-container/app-container.modul
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   imports: [
     CoreModule,
     AppContainerModule,
