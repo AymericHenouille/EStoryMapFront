@@ -1,7 +1,0 @@
-<mat-toolbar *ngIf="project">
-  <button *ngIf="workspace" mat-icon-button [routerLink]="['/workspaces', workspace.id]">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-
-  <span>{{ project.emoticon }} {{ project.label }}</span>
-</mat-toolbar>
